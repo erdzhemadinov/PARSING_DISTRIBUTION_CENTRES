@@ -174,7 +174,7 @@ class YandexMapParser():
                     # drag slider down till the end. Calculate length
                     # of slider current position and calculating offset as
                     #  height(height of windopw) - slider height - slider position
-                    time.sleep(10)
+                    time.sleep(15)
 
                     slider = self.driver.find_elements_by_class_name('scroll__scrollbar-thumb')[0]
                     slider_size = slider.size
@@ -203,12 +203,11 @@ class YandexMapParser():
             except TimeoutException:
                 pass
 
-
             # extract information
             html = self.driver.page_source
             soup = BeautifulSoup(html, 'html.parser')
 
-            # extract adresses
+            # extract addresses
             addresses = soup.find_all("div", {"class": "search-business-snippet-view__address"}, text=True)
             addresses = [i.text.strip().replace("\xa0", " ") for i in addresses]
 
@@ -257,7 +256,7 @@ if __name__ == '__main__':
 
     my_parser = argparse.ArgumentParser()
     my_parser.add_argument("-b", '--browser', choices=['firefox', 'chrome'],
-                           action='store', type=str, required=True)
+                           action='store', type=str, default='chrome', required=True)
     my_parser.add_argument('-q', '--query', action='store', type=str, required=True, default="Ozon, пункты выдачи ")
     my_parser.add_argument('-l', '--range_left', action='store', type=int, default=0, required=False)
     my_parser.add_argument('-r', '--range_right', action='store', type=int, default=86,  required=False)
@@ -274,7 +273,7 @@ if __name__ == '__main__':
 
     df = None
     currdate = datetime.now().strftime('%s')
-
+    print(len(regions))
     for i in tqdm(range(slice[0], slice[1])):
 
         query = search_string + " " + regions[i]
@@ -288,7 +287,6 @@ if __name__ == '__main__':
             df = parser.parse_data()
         else:
             df = df.append(parser.parse_data())
-        # print("done {} shape of df is {}".format(regions[i], df.shape))
 
-        df.to_excel('./output/result_full.xlsx', index=None)
+        df.to_excel('./output/result_{0}.xlsx'.format(search_string), index=None)
 
