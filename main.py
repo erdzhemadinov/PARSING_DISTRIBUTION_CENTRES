@@ -41,7 +41,7 @@ class YandexMapParser():
             if self.browser == 'firefox':
                 self.driver = webdriver.Firefox(executable_path='drivers/geckodriver_firefox')
             elif self.browser == 'chrome':
-                self.driver = webdriver.Chrome(executable_path='drivers/geckodriver_firefox')
+                self.driver = webdriver.Chrome(executable_path='drivers/chromedriver97')
         else:
             self.driver = None
 
@@ -174,7 +174,7 @@ class YandexMapParser():
                     # drag slider down till the end. Calculate length
                     # of slider current position and calculating offset as
                     #  height(height of windopw) - slider height - slider position
-                    time.sleep(15)
+                    time.sleep(12)
 
                     slider = self.driver.find_elements_by_class_name('scroll__scrollbar-thumb')[0]
                     slider_size = slider.size
@@ -259,7 +259,7 @@ if __name__ == '__main__':
                            action='store', type=str, default='chrome', required=True)
     my_parser.add_argument('-q', '--query', action='store', type=str, required=True, default="Ozon, пункты выдачи ")
     my_parser.add_argument('-l', '--range_left', action='store', type=int, default=0, required=False)
-    my_parser.add_argument('-r', '--range_right', action='store', type=int, default=86,  required=False)
+    my_parser.add_argument('-r', '--range_right', action='store', type=int, default=84,  required=False)
 
     args = my_parser.parse_args()
 
@@ -273,7 +273,7 @@ if __name__ == '__main__':
 
     df = None
     currdate = datetime.now().strftime('%s')
-    print(len(regions))
+
     for i in tqdm(range(slice[0], slice[1])):
 
         query = search_string + " " + regions[i]
@@ -281,7 +281,7 @@ if __name__ == '__main__':
                                  sleep_time=0.1, change_header_iter=10,
                                  save_after=100, with_selenium=True,
                                  google_token_file="token.txt", query=query,
-                                 region=regions[i], currdate=currdate, )
+                                 region=regions[i], currdate=currdate, browser=browser)
 
         if df is None:
             df = parser.parse_data()
