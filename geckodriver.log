@@ -12281,3 +12281,42 @@ JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/bu
 1642593913350	geckodriver	INFO	Listening on 127.0.0.1:47849
 1642593913353	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "51241" "-no-remote" "-profile" "/tmp/rust_mozprofilemh0bum"
 1642593918749	Marionette	INFO	Marionette enabled
+[GFX1-]: GFX: RenderThread detected a device reset in PostUpdate
+[GFX1-]: GFX: RenderThread detected a device reset in PostUpdate
+[GFX1-]: GFX: RenderThread detected a device reset in PostUpdate
+[GFX1-]: GFX: RenderThread detected a device reset in PostUpdate
+JavaScript warning: , line 0: WebGL warning: <Present>: Swap chain surface creation failed.
+WebGL(0x7f36baab2a00)::LoseContext(0)
+JavaScript warning: , line 0: WebGL context was lost.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/35bc518ae7f4dd4132a8.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/35bc518ae7f4dd4132a8.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/35bc518ae7f4dd4132a8.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/35bc518ae7f4dd4132a8.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/35bc518ae7f4dd4132a8.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/35bc518ae7f4dd4132a8.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/35bc518ae7f4dd4132a8.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/35bc518ae7f4dd4132a8.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/35bc518ae7f4dd4132a8.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/35bc518ae7f4dd4132a8.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/35bc518ae7f4dd4132a8.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/35bc518ae7f4dd4132a8.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/35bc518ae7f4dd4132a8.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/35bc518ae7f4dd4132a8.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/35bc518ae7f4dd4132a8.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/35bc518ae7f4dd4132a8.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/35bc518ae7f4dd4132a8.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/35bc518ae7f4dd4132a8.ru.js, line 1: deleteVertexArrayOES: Extension is `invalidated`.
+Unflushed glGetGraphicsResetStatus: 0x92bb
+1642648397140	Marionette	INFO	Stopped listening on port 41345
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1642648405779	Marionette	INFO	Stopped listening on port 46049
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+!!! error running onStopped callback: TypeError: callback is not a function
+console.error: "Could not write session state file " (new Error("IOUtils: Shutting down and refusing additional I/O tasks", (void 0), 106)) "DOMException@resource://gre/modules/PromiseWorker.jsm:106:18\npostMessage@resource://gre/modules/PromiseWorker.jsm:342:55\nobserve@resource://gre/modules/AsyncShutdown.jsm:575:16\n"
+JavaScript error: resource://gre/modules/CrashMonitor.jsm, line 201: AbortError: IOUtils: Shutting down and refusing additional I/O tasks
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
