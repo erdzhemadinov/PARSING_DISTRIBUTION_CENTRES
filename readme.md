@@ -101,9 +101,6 @@ pip install -r requirements.txt
 - DATE_OF_LOADING_FIRST | DATE
 - COMPANY_NAME | VARCHAR(256)
 
-
-
-
 ## Examples 
 ```sh
 python main.py --browser="firefox" --query="Ozon, пункты выдачи" --token="aezakmiAEZAKMIaezakmi" --save_place="both"
@@ -114,11 +111,12 @@ python main.py --browser="firefox" --query="Ozon, пункты выдачи" --t
 python main.py --browser="chrome" --query="Ozon, пункты выдачи" --range_left=10 --range_right=15 --token="aezakmiAEZAKMIaezakmi" --save_place="excel"
 ```
 
-Для  сохранения 
+Для сохранения в Excel для регионов с 10 по 15 (в списке *regions.xlsx*) с использованием браузера Chrome
+
 
 ## License
 
-MIT
+FREE
 
 **Free Software, Hell Yeah!**
 
