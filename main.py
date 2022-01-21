@@ -134,7 +134,7 @@ class YandexMapParser:
 
             # insert query in input in yandex map
 
-            wait = WebDriverWait(self.driver, 15)
+            wait = WebDriverWait(self.driver, 10)
             el = wait.until(ec.visibility_of_element_located((By.CLASS_NAME, "input__control")))
             el.send_keys(self.query)
             el.send_keys(Keys.ENTER)
@@ -142,7 +142,7 @@ class YandexMapParser:
             # if we have scroll on site(if we have enough number of observations
             try:
                 # get info about scroll
-                wait = WebDriverWait(self.driver, 15)
+                wait = WebDriverWait(self.driver, 10)
                 source = wait.until(ec.visibility_of_element_located(
                     (By.CLASS_NAME, "scroll__scrollbar-thumb")))
 
@@ -288,14 +288,17 @@ if __name__ == '__main__':
             df_new['DATE_OF_LOADING_FIRST'] = datetime.today().strftime('%Y-%m-%d')
 
             df_all = df_all.append(df_new)
+            df_new.to_excel('./output/result_{0}_{1}.xlsx'.format(search_string, regions[region_id]), index=None)
 
         if args.save_place in ['excel', 'both']:
-            df_new.to_excel('./output/result_{0}_{1}.xlsx'.format(search_string, regions[region_id]), index=None)
 
             df_all.to_excel('./output/full_report_{0}.xlsx'.format(search_string), index=None)
 
-        if args.save_place in ['database', 'both']:
-            db_conn = DbAction('config_db.json')
+    if args.save_place in ['database', 'both']:
+        db_conn = DbAction('config_db.json')
+        for region in df_all.REGION.unique():
+
+            df_new = df_all[df_all.REGION == region].drop_duplicates(subset=['ADDRESS'], keep='first')
 
             type_of_points = df_new['TYPE_PP'].values[0]
             type_of_company_name = df_new['COMPANY_NAME'].values[0]
@@ -309,6 +312,7 @@ if __name__ == '__main__':
                 df_insert = df_new
             else:
                 df_insert = db_conn.merge_dataframe_diff(df, df_new)
+
 
             db_conn.delete(
                 "DELETE from DATA_SCIENCE.PARSER_DELIVERY_POINTS WHERE TYPE_PP=\'{0}\' AND COMPANY_NAME=\'{1}\' AND REGION=\'{2}\'  ".format(
