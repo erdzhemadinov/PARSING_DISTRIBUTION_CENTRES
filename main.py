@@ -173,7 +173,7 @@ class YandexMapParser:
                                                                                 height - slider_h - slider.location.get(
                                                                                     "y")).perform()
 
-                    time.sleep(4)
+                    time.sleep(5)
                     webdriver.ActionChains(self.driver).drag_and_drop_by_offset(source_ele, target_ele_x_offset,
                                                                                 1).perform()
 
