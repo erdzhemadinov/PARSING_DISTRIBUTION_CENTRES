@@ -15208,3 +15208,142 @@ JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/bu
 JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
 JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
 JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+1642764140405	Marionette	INFO	Stopped listening on port 37355
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1642764141677	geckodriver	INFO	Listening on 127.0.0.1:45781
+1642764141679	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "51243" "-no-remote" "-profile" "/tmp/rust_mozprofileFUzUbA"
+1642764145497	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileFUzUbA/search.json.mozlz4", (void 0)))
+JavaScript error: resource://gre/modules/SearchService.jsm, line 204: Error: Something tried to use the search service before it's been properly intialized. Please examine the stack trace to figure out what and where to fix it:
+_ensureInitialized@resource://gre/modules/SearchService.jsm:204:15
+_getEngineDefault@resource://gre/modules/SearchService.jsm:2163:10
+get defaultEngine@resource://gre/modules/SearchService.jsm:2295:17
+_cacheL10nStrings@resource:///modules/UrlbarView.jsm:2178:11
+onQueryStarted@resource:///modules/UrlbarView.jsm:583:10
+notify@resource:///modules/UrlbarController.jsm:652:25
+startQuery@resource:///modules/UrlbarController.jsm:133:10
+startQuery@resource:///modules/UrlbarInput.jsm:1355:52
+_on_input@resource:///modules/UrlbarInput.jsm:3054:10
+handleEvent@resource:///modules/UrlbarInput.jsm:425:23
+
+JavaScript error: resource:///modules/UrlbarView.jsm, line 2178: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "Something tried to use the search service before it's been properly intialized. Please examine the stack trace to figure out what and where to fix it:
+_ensureInitialized@resource://gre/modules/SearchService.jsm:204:15
+_getEngineDefault@resource://gre/modules/SearchService.jsm:2163:10
+get defaultEngine@resource://gre/modules/SearchService.jsm:2295:17
+_cacheL10nStrings@resource:///modules/UrlbarView.jsm:2178:11
+onQueryStarted@resource:///modules/UrlbarView.jsm:583:10
+notify@resource:///modules/UrlbarController.jsm:652:25
+startQuery@resource:///modules/UrlbarController.jsm:133:10
+startQuery@resource:///modules/UrlbarInput.jsm:1355:52
+_on_input@resource:///modules/UrlbarInput.jsm:3054:10
+handleEvent@resource:///modules/UrlbarInput.jsm:425:23
+" {file: "resource://gre/modules/SearchService.jsm" line: 204}]'[JavaScript Error: "Something tried to use the search service before it's been properly intialized. Please examine the stack trace to figure out what and where to fix it:
+_ensureInitialized@resource://gre/modules/SearchService.jsm:204:15
+_getEngineDefault@resource://gre/modules/SearchService.jsm:2163:10
+get defaultEngine@resource://gre/modules/SearchService.jsm:2295:17
+_cacheL10nStrings@resource:///modules/UrlbarView.jsm:2178:11
+onQueryStarted@resource:///modules/UrlbarView.jsm:583:10
+notify@resource:///modules/UrlbarController.jsm:652:25
+startQuery@resource:///modules/UrlbarController.jsm:133:10
+startQuery@resource:///modules/UrlbarInput.jsm:1355:52
+_on_input@resource:///modules/UrlbarInput.jsm:3054:10
+handleEvent@resource:///modules/UrlbarInput.jsm:425:23
+" {file: "resource://gre/modules/SearchService.jsm" line: 204}]' when calling method: [nsISearchService::defaultEngine]
+JavaScript error: resource://gre/modules/SearchService.jsm, line 204: Error: Something tried to use the search service before it's been properly intialized. Please examine the stack trace to figure out what and where to fix it:
+_ensureInitialized@resource://gre/modules/SearchService.jsm:204:15
+_getEngineDefault@resource://gre/modules/SearchService.jsm:2163:10
+get defaultEngine@resource://gre/modules/SearchService.jsm:2295:17
+_cacheL10nStrings@resource:///modules/UrlbarView.jsm:2178:11
+onQueryStarted@resource:///modules/UrlbarView.jsm:583:10
+notify@resource:///modules/UrlbarController.jsm:652:25
+startQuery@resource:///modules/UrlbarController.jsm:133:10
+startQuery@resource:///modules/UrlbarInput.jsm:1355:52
+_on_input@resource:///modules/UrlbarInput.jsm:3054:10
+handleEvent@resource:///modules/UrlbarInput.jsm:425:23
+
+JavaScript error: resource://gre/modules/SearchService.jsm, line 204: Error: Something tried to use the search service before it's been properly intialized. Please examine the stack trace to figure out what and where to fix it:
+_ensureInitialized@resource://gre/modules/SearchService.jsm:204:15
+_getEngineDefault@resource://gre/modules/SearchService.jsm:2163:10
+get defaultEngine@resource://gre/modules/SearchService.jsm:2295:17
+_cacheL10nStrings@resource:///modules/UrlbarView.jsm:2178:11
+onQueryStarted@resource:///modules/UrlbarView.jsm:583:10
+notify@resource:///modules/UrlbarController.jsm:652:25
+startQuery@resource:///modules/UrlbarController.jsm:133:10
+startQuery@resource:///modules/UrlbarInput.jsm:1355:52
+autoOpen@resource:///modules/UrlbarView.jsm:561:16
+_on_mousedown@resource:///modules/UrlbarInput.jsm:2954:21
+handleEvent@resource:///modules/UrlbarInput.jsm:425:23
+
+JavaScript error: resource:///modules/UrlbarView.jsm, line 2178: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "Something tried to use the search service before it's been properly intialized. Please examine the stack trace to figure out what and where to fix it:
+_ensureInitialized@resource://gre/modules/SearchService.jsm:204:15
+_getEngineDefault@resource://gre/modules/SearchService.jsm:2163:10
+get defaultEngine@resource://gre/modules/SearchService.jsm:2295:17
+_cacheL10nStrings@resource:///modules/UrlbarView.jsm:2178:11
+onQueryStarted@resource:///modules/UrlbarView.jsm:583:10
+notify@resource:///modules/UrlbarController.jsm:652:25
+startQuery@resource:///modules/UrlbarController.jsm:133:10
+startQuery@resource:///modules/UrlbarInput.jsm:1355:52
+_on_input@resource:///modules/UrlbarInput.jsm:3054:10
+handleEvent@resource:///modules/UrlbarInput.jsm:425:23
+" {file: "resource://gre/modules/SearchService.jsm" line: 204}]'[JavaScript Error: "Something tried to use the search service before it's been properly intialized. Please examine the stack trace to figure out what and where to fix it:
+_ensureInitialized@resource://gre/modules/SearchService.jsm:204:15
+_getEngineDefault@resource://gre/modules/SearchService.jsm:2163:10
+get defaultEngine@resource://gre/modules/SearchService.jsm:2295:17
+_cacheL10nStrings@resource:///modules/UrlbarView.jsm:2178:11
+onQueryStarted@resource:///modules/UrlbarView.jsm:583:10
+notify@resource:///modules/UrlbarController.jsm:652:25
+startQuery@resource:///modules/UrlbarController.jsm:133:10
+startQuery@resource:///modules/UrlbarInput.jsm:1355:52
+_on_input@resource:///modules/UrlbarInput.jsm:3054:10
+handleEvent@resource:///modules/UrlbarInput.jsm:425:23
+" {file: "resource://gre/modules/SearchService.jsm" line: 204}]' when calling method: [nsISearchService::defaultEngine]
+JavaScript error: resource:///modules/UrlbarView.jsm, line 2178: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "Something tried to use the search service before it's been properly intialized. Please examine the stack trace to figure out what and where to fix it:
+_ensureInitialized@resource://gre/modules/SearchService.jsm:204:15
+_getEngineDefault@resource://gre/modules/SearchService.jsm:2163:10
+get defaultEngine@resource://gre/modules/SearchService.jsm:2295:17
+_cacheL10nStrings@resource:///modules/UrlbarView.jsm:2178:11
+onQueryStarted@resource:///modules/UrlbarView.jsm:583:10
+notify@resource:///modules/UrlbarController.jsm:652:25
+startQuery@resource:///modules/UrlbarController.jsm:133:10
+startQuery@resource:///modules/UrlbarInput.jsm:1355:52
+autoOpen@resource:///modules/UrlbarView.jsm:561:16
+_on_mousedown@resource:///modules/UrlbarInput.jsm:2954:21
+handleEvent@resource:///modules/UrlbarInput.jsm:425:23
+" {file: "resource://gre/modules/SearchService.jsm" line: 204}]'[JavaScript Error: "Something tried to use the search service before it's been properly intialized. Please examine the stack trace to figure out what and where to fix it:
+_ensureInitialized@resource://gre/modules/SearchService.jsm:204:15
+_getEngineDefault@resource://gre/modules/SearchService.jsm:2163:10
+get defaultEngine@resource://gre/modules/SearchService.jsm:2295:17
+_cacheL10nStrings@resource:///modules/UrlbarView.jsm:2178:11
+onQueryStarted@resource:///modules/UrlbarView.jsm:583:10
+notify@resource:///modules/UrlbarController.jsm:652:25
+startQuery@resource:///modules/UrlbarController.jsm:133:10
+startQuery@resource:///modules/UrlbarInput.jsm:1355:52
+autoOpen@resource:///modules/UrlbarView.jsm:561:16
+_on_mousedown@resource:///modules/UrlbarInput.jsm:2954:21
+handleEvent@resource:///modules/UrlbarInput.jsm:425:23
+" {file: "resource://gre/modules/SearchService.jsm" line: 204}]' when calling method: [nsISearchService::defaultEngine]
+DevTools listening on ws://localhost:51243/devtools/browser/1ddbdc47-41bb-44fc-abe1-b7c1885ada18
+1642764151493	Marionette	INFO	Listening on port 36835
+1642764151513	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 772))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 419))
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/base/cf3011f1947beeaf31f9.ru.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Texture has not been initialized prior to a partial upload, forcing the browser to clear it. This may be slow.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Texture has not been initialized prior to a partial upload, forcing the browser to clear it. This may be slow.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: drawArraysInstanced: Drawing without vertex attrib 0 array enabled forces the browser to do expensive emulation work when running on desktop OpenGL platforms, for example on Mac. It is preferable to always draw with vertex attrib 0 array enabled, by using bindAttribLocation to bind some always-used attribute to location 0.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
