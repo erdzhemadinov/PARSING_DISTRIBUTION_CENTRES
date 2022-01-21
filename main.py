@@ -9,31 +9,32 @@ import requests
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support import expected_conditions as ec
 from selenium.common.exceptions import TimeoutException
 import argparse
 from datetime import datetime
 from statistics import mode
+from db_load import DbAction
 
 
-class YandexMapParser():
-    def __init__(self, link,  sleep_time=0.1,
+class YandexMapParser:
+    def __init__(self, _link,  sleep_time=0.1,
                  change_header_iter=10,save_after=100,
-                 with_selenium=True, google_token_file='token.txt',
-                 query="Ozon, пункты выдачи москва",
-                 region='москва', currdate=datetime.now().strftime('%s'), browser='firefox'):
+                 with_selenium=True, token=None,
+                 _query="Ozon, пункты выдачи москва",
+                 region='москва', _curr_date=datetime.now().strftime('%s'), _browser='firefox'):
 
-        self.link = link
+        self.link = _link
         self.sleep_time = sleep_time
         self.change_header_iter = change_header_iter
         self._header = self._change_user_agent()
         self.save_after = save_after
         self.with_selenium = with_selenium
-        self.google_token_file = google_token_file
-        self.query = query
+
+        self.query = _query
         self.region = region
-        self.currdate = currdate
-        self.browser = browser
+        self.curr_date = _curr_date
+        self.browser = _browser
 
         self._df = None
 
@@ -45,22 +46,10 @@ class YandexMapParser():
         else:
             self.driver = None
 
-        self.token = self._load_token()
+        self.token = token
 
-    def _load_token(self):
-
-        """
-        This function load google token from txt file
-        :return:
-        token: string having token
-        """
-        #  load token
-        with open(self.google_token_file) as f:
-            lines = f.readlines()
-
-        return str(lines[0])
-
-    def _change_user_agent(self):
+    @staticmethod
+    def _change_user_agent():
 
         """
         This function switch user anonymity
@@ -78,13 +67,10 @@ class YandexMapParser():
 
 
         @param address: String address as accurate as possible. For Example "18 Grafton Street, Dublin, Ireland"
-        @param api_key: String API key if present from google.
-                        If supplied, requests will use your allowance from the Google API. If not, you
-                        will be limited to the free usage of 2500 requests per day.
-        @param return_full_response: Boolean to indicate if you'd like to return the full response from google. This
+        @param return_full_response: Boolean to indicate if you'd like to return the full response from Google. This
                         is useful if you'd like additional location details for storage or parsing later.
 
-        @ param return_lat_lon: Boolean If you'd return only corrdinates (lat, lon) as tuple.
+        @ param return_lat_lon: Boolean If you'd return only coordinates (lat, lon) as tuple.
        """
         # Set up your Geocoding url
         geocode_url = "https://maps.googleapis.com/maps/api/geocode/json?address={}".format(address)
@@ -128,7 +114,7 @@ class YandexMapParser():
             output['response'] = results
             return output
         elif return_lat_lon is True:
-            return (output['latitude'], output['longitude'])
+            return output['latitude'], output['longitude']
         else:
             return output
 
@@ -140,8 +126,8 @@ class YandexMapParser():
 
         # if selenium is switched off
         if not self.with_selenium:
-            htmlContent = requests.get(self.link, headers=self._header)
-            soup = BeautifulSoup(htmlContent.content, 'html.parser')
+            html_content = requests.get(self.link, headers=self._header)
+            soup = BeautifulSoup(html_content.content, 'html.parser')
         else:
             # if selenium is on
             self.driver.get(self.link)
@@ -149,7 +135,7 @@ class YandexMapParser():
             # insert query in input in yandex map
 
             wait = WebDriverWait(self.driver, 10)
-            el = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, "input__control")))
+            el = wait.until(ec.visibility_of_element_located((By.CLASS_NAME, "input__control")))
             el.send_keys(self.query)
             el.send_keys(Keys.ENTER)
 
@@ -157,23 +143,25 @@ class YandexMapParser():
             try:
                 # get info about scroll
                 wait = WebDriverWait(self.driver, 10)
-                source = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, "scroll__scrollbar-thumb")))
+                source = wait.until(ec.visibility_of_element_located(
+                    (By.CLASS_NAME, "scroll__scrollbar-thumb")))
 
                 source_ele = self.driver.find_element(By.CLASS_NAME, "scroll__scrollbar-thumb")
                 target_ele = self.driver.find_element(By.CLASS_NAME, "scroll__scrollbar-thumb")
 
                 target_ele_x_offset = target_ele.location.get("x")
-                target_ele_y_offset = target_ele.location.get("y")
+                # target_ele_y_offset = target_ele.location.get("y")
 
-                height = int(self.driver.execute_script("return document.documentElement.scrollHeight"))
+                height = int(self.driver.execute_script(
+                    "return document.documentElement.scrollHeight"
+                ))
                 # Performs dragAndDropBy onto the target element offset position
-                cnt = 0
                 last_len = -10e6
-                curr_len = -10e5
+
                 while True:
                     # drag slider down till the end. Calculate length
                     # of slider current position and calculating offset as
-                    #  height(height of windopw) - slider height - slider position
+                    #  height(height of window) - slider height - slider position
                     time.sleep(12)
 
                     slider = self.driver.find_elements_by_class_name('scroll__scrollbar-thumb')[0]
@@ -194,7 +182,6 @@ class YandexMapParser():
                     addresses = soup.find_all("div", {"class": "search-business-snippet-view__address"}, text=True)
                     addresses = [i.text.strip().replace("\xa0", " ") for i in addresses]
                     curr_len = len(addresses)
-                    # print(curr_len)
 
                     if last_len == curr_len:
                         break
@@ -208,44 +195,48 @@ class YandexMapParser():
             soup = BeautifulSoup(html, 'html.parser')
 
             # extract addresses
-            addresses = soup.find_all("div", {"class": "search-business-snippet-view__address"}, text=True)
+            addresses = soup.find_all("div",
+                                      {"class": "search-business-snippet-view__address"}, text=True)
             addresses = [i.text.strip().replace("\xa0", " ") for i in addresses]
 
             # extract rating
-            rate = soup.find_all("span", {"class": "business-rating-badge-view__rating"}, text=True)
-            rate = [i.text.strip().replace("\xa0", " ").replace(",", ".") for i in rate]
+            # rate = soup.find_all("span",
+            #                      {"class": "business-rating-badge-view__rating"}, text=True)
+            # rate = [i.text.strip().replace("\xa0", " ").replace(",", ".") for i in rate]
 
             # extract categories
-            typing = soup.find_all("div", {"class": "search-business-snippet-view__categories"}, text=True)
+            typing = soup.find_all("div",
+                                   {"class": "search-business-snippet-view__categories"}, text=True)
             typing = [i.text.strip().replace("\xa0", " ").replace(",", ".") for i in typing]
 
             # extract titles
-            title = soup.find_all("div", {"class": "search-business-snippet-view__title"}, text=True)
+            title = soup.find_all("div",
+                                  {"class": "search-business-snippet-view__title"}, text=True)
             title = [i.text.strip().replace("\xa0", " ").replace(",", ".") for i in title]
 
             lat_list = []
             lon_list = []
 
             # geocoding via google
-            for i in tqdm(addresses):
+            for j in tqdm(addresses):
 
                 sleep(0.2)
-                lat, lon = self._get_google_results(i, False, True)
+                lat, lon = self._get_google_results(j, False, True)
                 lat_list.append(lat)
                 lon_list.append(lon)
 
             # create dataframe
             self._df = pd.DataFrame({
-                'address': addresses,
-                'type': mode(typing),
-                'title': mode(title),
-                'lat': lat_list,
-                'lon': lon_list,
-                'region': self.region,
-                'timestamp': self.currdate
+                'ADDRESS': addresses,
+                'TYPE_PP': mode(typing),
+                'COMPANY_NAME': mode(title),
+                'LAT': lat_list,
+                'LON': lon_list,
+                'REGION': self.region,
+                'DATE_OF_LOADING': self.curr_date
             })
 
-        # colse drivers
+        # close drivers
         self.driver.close()
         self.driver.quit()
 
@@ -260,33 +251,62 @@ if __name__ == '__main__':
     my_parser.add_argument('-q', '--query', action='store', type=str, required=True, default="Ozon, пункты выдачи ")
     my_parser.add_argument('-l', '--range_left', action='store', type=int, default=0, required=False)
     my_parser.add_argument('-r', '--range_right', action='store', type=int, default=84,  required=False)
+    my_parser.add_argument('-t', '--token', action='store', type=str, required=True)
+    my_parser.add_argument('-sp', '--save_place', choices=['excel', 'database', 'both'],
+                           action='store', type=str, required=True)
 
     args = my_parser.parse_args()
 
     link = "https://yandex.ru/maps/?ll=84.163264%2C61.996842&z=3"
 
     search_string = args.query
-    slice = (args.range_left, args.range_right)
+    _slice = (args.range_left, args.range_right)
     browser = args.browser
 
     regions = pd.read_excel("regions.xlsx")['name'].values.tolist()
 
-    df = None
-    currdate = datetime.now().strftime('%s')
+    df_new = None
+    curr_date = datetime.today().strftime('%Y-%m-%d')
 
-    for i in tqdm(range(slice[0], slice[1])):
+    for region_id in tqdm(range(_slice[0], _slice[1])):
 
-        query = search_string + " " + regions[i]
-        parser = YandexMapParser(link=link,
+        query = search_string + " " + regions[region_id]
+        parser = YandexMapParser(_link=link,
                                  sleep_time=0.1, change_header_iter=10,
                                  save_after=100, with_selenium=True,
-                                 google_token_file="token.txt", query=query,
-                                 region=regions[i], currdate=currdate, browser=browser)
+                                 token=args.token, _query=query,
+                                 region=regions[region_id], _curr_date=curr_date, _browser=browser)
 
-        if df is None:
-            df = parser.parse_data()
+        if df_new is None:
+            df_new = parser.parse_data()
+            df_new['DATE_OF_LOADING_FIRST'] = datetime.today().strftime('%Y-%m-%d')
         else:
-            df = df.append(parser.parse_data())
+            df_new = df_new.append(parser.parse_data())
+            df_new['DATE_OF_LOADING_FIRST'] = datetime.today().strftime('%Y-%m-%d')
 
-        df.to_excel('./output/result_{0}.xlsx'.format(search_string), index=None)
+        if args.save_place in ['excel', 'both']:
+            df_new.to_excel('./output/result_{0}.xlsx'.format(search_string), index=None)
 
+    if args.save_place in ['database', 'both']:
+        db_conn = DbAction('config_db.json')
+
+        # df_new = pd.read_excel("output/result_Ozon, пункты выдачи.xlsx").sample(20)
+
+        type_of_points = df_new['TYPE_PP'].values[0]
+        type_of_company_name = df_new['COMPANY_NAME'].values[0]
+
+        df = db_conn.select(
+            'SELECT * FROM  DATA_SCIENCE.PARSER_DELIVERY_POINTS WHERE TYPE_PP=\'{0}\' AND COMPANY_NAME=\'{1}\'' \
+            .format(type_of_points, type_of_company_name))
+
+        if len(df) == 0:
+            df_insert = df_new
+        else:
+            df_insert = db_conn.merge_dataframe_diff(df, df_new)
+        # df_new = db_conn.select('SELECT * FROM  DATA_SCIENCE.PARSER_DELIVERY_POINTS')
+        db_conn.delete(
+            "DELETE from DATA_SCIENCE.PARSER_DELIVERY_POINTS WHERE TYPE_PP=\'{0}\' AND COMPANY_NAME=\'{1}\'".format(
+                type_of_points, type_of_company_name))
+
+        db_conn.insert(df_insert, "DATA_SCIENCE",
+                       "PARSER_DELIVERY_POINTS")

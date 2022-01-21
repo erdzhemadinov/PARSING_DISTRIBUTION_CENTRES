@@ -12320,3 +12320,264 @@ JavaScript error: resource://gre/modules/CrashMonitor.jsm, line 201: AbortError:
 
 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+[GFX1-]: GFX: RenderThread detected a device reset in PostUpdate
+JavaScript warning: , line 0: WebGL warning: <Present>: Swap chain surface creation failed.
+WebGL(0x7f5d5a873a00)::LoseContext(0)
+JavaScript warning: , line 0: WebGL context was lost.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/35bc518ae7f4dd4132a8.ru.js, line 1: deleteVertexArrayOES: Extension is `invalidated`.
+Unflushed glGetGraphicsResetStatus: 0x92bb
+[Child 433315, MediaDecoderStateMachine #1] WARNING: Decoder=7f5d5242e900 state=DECODING_METADATA Decode metadata failed, shutting down decoder: file /build/firefox-oDiU8w/firefox-96.0+build2/dom/media/MediaDecoderStateMachine.cpp:367
+[Child 433315, MediaDecoderStateMachine #1] WARNING: Decoder=7f5d5242e900 Decode error: NS_ERROR_DOM_MEDIA_METADATA_ERR (0x806e0006): file /build/firefox-oDiU8w/firefox-96.0+build2/dom/media/MediaDecoderStateMachine.cpp:3568
+1642648676397	Marionette	INFO	Stopped listening on port 38163
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1642650458050	geckodriver	INFO	Listening on 127.0.0.1:52459
+1642650458054	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "44871" "-no-remote" "-profile" "/tmp/rust_mozprofileRgXHpg"
+1642654075296	geckodriver	INFO	Listening on 127.0.0.1:54489
+1642654075300	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "46675" "-no-remote" "-profile" "/tmp/rust_mozprofile64RPNy"
+1642679601903	geckodriver	INFO	Listening on 127.0.0.1:48981
+1642679601909	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "57967" "-no-remote" "-profile" "/tmp/rust_mozprofileVsIGV5"
+1642679605971	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileVsIGV5/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57967/devtools/browser/90d3659d-aa39-4ca3-9c8c-1ced027abae2
+1642679611431	Marionette	INFO	Listening on port 39841
+1642679612668	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 772))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 419))
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/base/9fbc5704e12025db6edd.ru.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Texture has not been initialized prior to a partial upload, forcing the browser to clear it. This may be slow.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Texture has not been initialized prior to a partial upload, forcing the browser to clear it. This may be slow.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: drawArraysInstanced: Drawing without vertex attrib 0 array enabled forces the browser to do expensive emulation work when running on desktop OpenGL platforms, for example on Mac. It is preferable to always draw with vertex attrib 0 array enabled, by using bindAttribLocation to bind some always-used attribute to location 0.
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+1642679962548	Marionette	INFO	Stopped listening on port 39841
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1642679963648	geckodriver	INFO	Listening on 127.0.0.1:57633
+1642679963651	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "45379" "-no-remote" "-profile" "/tmp/rust_mozprofileb5zUA8"
+1642679969324	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileb5zUA8/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:45379/devtools/browser/a8a6b208-df99-4f97-ac2f-009197cdd6e8
+1642679972526	Marionette	INFO	Listening on port 45985
+1642679972780	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/base/9fbc5704e12025db6edd.ru.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Texture has not been initialized prior to a partial upload, forcing the browser to clear it. This may be slow.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Texture has not been initialized prior to a partial upload, forcing the browser to clear it. This may be slow.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: drawArraysInstanced: Drawing without vertex attrib 0 array enabled forces the browser to do expensive emulation work when running on desktop OpenGL platforms, for example on Mac. It is preferable to always draw with vertex attrib 0 array enabled, by using bindAttribLocation to bind some always-used attribute to location 0.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript warning: https://mc.yandex.ru/metrika/watch.js, line 10: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+1642679996847	Marionette	INFO	Stopped listening on port 45985
+1642679998733	geckodriver	INFO	Listening on 127.0.0.1:54267
+1642679998736	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "60627" "-no-remote" "-profile" "/tmp/rust_mozprofile91N3av"
+1642680002695	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile91N3av/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:60627/devtools/browser/a33ebd89-40e0-4c04-bf1f-839fc1b55eb5
+1642680008362	Marionette	INFO	Listening on port 41565
+1642680008757	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/SearchService.jsm, line 204: Error: Something tried to use the search service before it's been properly intialized. Please examine the stack trace to figure out what and where to fix it:
+_ensureInitialized@resource://gre/modules/SearchService.jsm:204:15
+_getEngineDefault@resource://gre/modules/SearchService.jsm:2163:10
+get defaultEngine@resource://gre/modules/SearchService.jsm:2295:17
+_cacheL10nStrings@resource:///modules/UrlbarView.jsm:2178:11
+onQueryStarted@resource:///modules/UrlbarView.jsm:583:10
+notify@resource:///modules/UrlbarController.jsm:652:25
+startQuery@resource:///modules/UrlbarController.jsm:133:10
+startQuery@resource:///modules/UrlbarInput.jsm:1355:52
+autoOpen@resource:///modules/UrlbarView.jsm:512:20
+_on_mousedown@resource:///modules/UrlbarInput.jsm:2954:21
+handleEvent@resource:///modules/UrlbarInput.jsm:425:23
+
+JavaScript error: resource:///modules/UrlbarView.jsm, line 2178: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "Something tried to use the search service before it's been properly intialized. Please examine the stack trace to figure out what and where to fix it:
+_ensureInitialized@resource://gre/modules/SearchService.jsm:204:15
+_getEngineDefault@resource://gre/modules/SearchService.jsm:2163:10
+get defaultEngine@resource://gre/modules/SearchService.jsm:2295:17
+_cacheL10nStrings@resource:///modules/UrlbarView.jsm:2178:11
+onQueryStarted@resource:///modules/UrlbarView.jsm:583:10
+notify@resource:///modules/UrlbarController.jsm:652:25
+startQuery@resource:///modules/UrlbarController.jsm:133:10
+startQuery@resource:///modules/UrlbarInput.jsm:1355:52
+autoOpen@resource:///modules/UrlbarView.jsm:512:20
+_on_mousedown@resource:///modules/UrlbarInput.jsm:2954:21
+handleEvent@resource:///modules/UrlbarInput.jsm:425:23
+" {file: "resource://gre/modules/SearchService.jsm" line: 204}]'[JavaScript Error: "Something tried to use the search service before it's been properly intialized. Please examine the stack trace to figure out what and where to fix it:
+_ensureInitialized@resource://gre/modules/SearchService.jsm:204:15
+_getEngineDefault@resource://gre/modules/SearchService.jsm:2163:10
+get defaultEngine@resource://gre/modules/SearchService.jsm:2295:17
+_cacheL10nStrings@resource:///modules/UrlbarView.jsm:2178:11
+onQueryStarted@resource:///modules/UrlbarView.jsm:583:10
+notify@resource:///modules/UrlbarController.jsm:652:25
+startQuery@resource:///modules/UrlbarController.jsm:133:10
+startQuery@resource:///modules/UrlbarInput.jsm:1355:52
+autoOpen@resource:///modules/UrlbarView.jsm:512:20
+_on_mousedown@resource:///modules/UrlbarInput.jsm:2954:21
+handleEvent@resource:///modules/UrlbarInput.jsm:425:23
+" {file: "resource://gre/modules/SearchService.jsm" line: 204}]' when calling method: [nsISearchService::defaultEngine]
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/base/9fbc5704e12025db6edd.ru.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Texture has not been initialized prior to a partial upload, forcing the browser to clear it. This may be slow.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Texture has not been initialized prior to a partial upload, forcing the browser to clear it. This may be slow.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: drawArraysInstanced: Drawing without vertex attrib 0 array enabled forces the browser to do expensive emulation work when running on desktop OpenGL platforms, for example on Mac. It is preferable to always draw with vertex attrib 0 array enabled, by using bindAttribLocation to bind some always-used attribute to location 0.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+1642680080075	Marionette	INFO	Stopped listening on port 41565
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1642680082081	geckodriver	INFO	Listening on 127.0.0.1:60293
+1642680082583	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "38713" "-no-remote" "-profile" "/tmp/rust_mozprofilerSlK24"
+1642680085714	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilerSlK24/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:38713/devtools/browser/0b31ca92-c7b8-4668-8b5d-1b2ec3de9d0b
+1642680090318	Marionette	INFO	Listening on port 46675
+1642680090456	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/base/9fbc5704e12025db6edd.ru.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Texture has not been initialized prior to a partial upload, forcing the browser to clear it. This may be slow.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Texture has not been initialized prior to a partial upload, forcing the browser to clear it. This may be slow.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: drawElementsInstanced: Drawing without vertex attrib 0 array enabled forces the browser to do expensive emulation work when running on desktop OpenGL platforms, for example on Mac. It is preferable to always draw with vertex attrib 0 array enabled, by using bindAttribLocation to bind some always-used attribute to location 0.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+1642680139782	Marionette	INFO	Stopped listening on port 46675
+1642680141359	geckodriver	INFO	Listening on 127.0.0.1:51955
+1642680141862	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "36969" "-no-remote" "-profile" "/tmp/rust_mozprofilexdm7BN"
+1642680145429	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilexdm7BN/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:36969/devtools/browser/a029245d-ada0-47e0-a74f-e9ef17390835
+1642680150772	Marionette	INFO	Listening on port 42781
+1642680151478	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/base/9fbc5704e12025db6edd.ru.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Texture has not been initialized prior to a partial upload, forcing the browser to clear it. This may be slow.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Texture has not been initialized prior to a partial upload, forcing the browser to clear it. This may be slow.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: drawArraysInstanced: Drawing without vertex attrib 0 array enabled forces the browser to do expensive emulation work when running on desktop OpenGL platforms, for example on Mac. It is preferable to always draw with vertex attrib 0 array enabled, by using bindAttribLocation to bind some always-used attribute to location 0.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://mc.yandex.ru/metrika/watch.js, line 10: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1642680321313	geckodriver	INFO	Listening on 127.0.0.1:43151
+1642680321317	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "60321" "-no-remote" "-profile" "/tmp/rust_mozprofileGNQtFf"
+[Child 546320, MediaDecoderStateMachine #1] WARNING: Decoder=7f889f4fc000 state=DECODING_METADATA Decode metadata failed, shutting down decoder: file /build/firefox-oDiU8w/firefox-96.0+build2/dom/media/MediaDecoderStateMachine.cpp:367
+[Child 546320, MediaDecoderStateMachine #1] WARNING: Decoder=7f889f4fc000 Decode error: NS_ERROR_DOM_MEDIA_METADATA_ERR (0x806e0006): file /build/firefox-oDiU8w/firefox-96.0+build2/dom/media/MediaDecoderStateMachine.cpp:3568
+[Child 546320, MediaDecoderStateMachine #1] WARNING: Decoder=7f88a5906a00 state=DECODING_METADATA Decode metadata failed, shutting down decoder: file /build/firefox-oDiU8w/firefox-96.0+build2/dom/media/MediaDecoderStateMachine.cpp:367
+[Child 546320, MediaDecoderStateMachine #1] WARNING: Decoder=7f88a5906a00 Decode error: NS_ERROR_DOM_MEDIA_METADATA_ERR (0x806e0006): file /build/firefox-oDiU8w/firefox-96.0+build2/dom/media/MediaDecoderStateMachine.cpp:3568
+[Child 546320, MediaDecoderStateMachine #1] WARNING: Decoder=7f88a6af1a00 state=DECODING_METADATA Decode metadata failed, shutting down decoder: file /build/firefox-oDiU8w/firefox-96.0+build2/dom/media/MediaDecoderStateMachine.cpp:367
+[Child 546320, MediaDecoderStateMachine #1] WARNING: Decoder=7f88a6af1a00 Decode error: NS_ERROR_DOM_MEDIA_METADATA_ERR (0x806e0006): file /build/firefox-oDiU8w/firefox-96.0+build2/dom/media/MediaDecoderStateMachine.cpp:3568
+[GFX1-]: GFX: RenderThread detected a device reset in PostUpdate
+JavaScript warning: , line 0: WebGL warning: <Present>: Swap chain surface creation failed.
+WebGL(0x7f88a77efc00)::LoseContext(0)
+JavaScript warning: , line 0: WebGL context was lost.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: bindVertexArrayOES: Extension is `invalidated`.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/1371b27c759b43bcab98.ru.js, line 1: deleteVertexArrayOES: Extension is `invalidated`.
+Unflushed glGetGraphicsResetStatus: 0x92bb
+1642687329777	Marionette	INFO	Stopped listening on port 42781
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1642745700875	geckodriver	INFO	Listening on 127.0.0.1:60193
+1642745701356	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "40841" "-no-remote" "-profile" "/tmp/rust_mozprofile7qDdPq"
+1642745710206	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile7qDdPq/search.json.mozlz4", (void 0)))
+console.error: Region.jsm: "Error fetching region" (new AbortError("The operation was aborted. ", (void 0), 770))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 419))
+DevTools listening on ws://localhost:40841/devtools/browser/1585f0a0-f6fa-4ecc-85f6-5329f7f0b861
+1642745723378	Marionette	INFO	Listening on port 34977
+1642745723611	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/base/cf3011f1947beeaf31f9.ru.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Texture has not been initialized prior to a partial upload, forcing the browser to clear it. This may be slow.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: drawElementsInstanced: Drawing without vertex attrib 0 array enabled forces the browser to do expensive emulation work when running on desktop OpenGL platforms, for example on Mac. It is preferable to always draw with vertex attrib 0 array enabled, by using bindAttribLocation to bind some always-used attribute to location 0.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Texture has not been initialized prior to a partial upload, forcing the browser to clear it. This may be slow.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: https://yastatic.net/s3/front-maps-static/maps-front-maps/build/client/desktop/chunks/ymaps-vector/c8448894f734dc402b9e.ru.js, line 1: WebGL warning: texSubImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.

@@ -73,6 +73,14 @@ pip install -r requirements.txt
 *"regions.xlsx"* . Необзязательный, значение по умолчанию 86, тип int
 
 
+```sh
+-t --token (string)
+```
+
+Токен для гугл API. Необходимо получить з
+
+
+
 ## Examples 
 ```sh
 python main.py --browser="firefox" --query="Ozon, пункты выдачи"
