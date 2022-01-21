@@ -1,0 +1,9 @@
+{
+  "driver": "{IBM DB2 ODBC DRIVER}",
+  "database": "bludb",
+  "hostname": "192.1.1.0",
+  "port" : 8000,
+  "protocol" : "TCPIP",
+  "login": "admin",
+  "password":"password"
+}

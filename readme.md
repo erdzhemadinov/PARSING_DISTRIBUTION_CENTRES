@@ -19,9 +19,9 @@
 - Парсинг информации по регионам по релевантному для пользователя запросу
 - Подмена USER-AGENT (как способ ухода от блокировок)
 - Обогащение геометками за счёт геокодинга
-- Запись либо в xlsx, либо в базу(в разработке)
-- Выбор одного из двух браузеров 
-- С примером выгрузки можно ознакомиться в папке ./outputs
+- Запись либо в xlsx, либо в базу, либо в оба источника(конфигурационная информация должна находится в файле см. пример файла config.json)
+- Выбор одного из двух браузеров Chrome или Firefix
+- С примером выгрузки можно ознакомиться в папке ./outputs. Выгрузки сохраняются в папку с запросом в качестве имени файла
 
 ##  Предподготовка
 > Для работы необходим токен, получить который можно [здесь](https://developers.google.com/maps/documentation/geocoding/start).
@@ -45,10 +45,10 @@ pip install -r requirements.txt
 Для запуска скрипта используются следующие параметры
 
 ```sh
--b --browser (string)
+-b --browser (string) 
 ```
 
-Браузер для парсина. Пареметр может принимать оно из двух значений "firefox" или "chrome". 
+Браузер для парсинга. Пареметр может принимать оно из двух значений "firefox" или "chrome". 
 Обязательный параметр. Тип str
 
 
@@ -64,27 +64,57 @@ pip install -r requirements.txt
 --range_left (string) 
 ```
 Левая граница для регионов помогает взять slice(подвыборку) регионов, числовые коды регионов находятся в файле
-*"regions.xlsx"* . Необзязательный, значение по умолчанию 0, тип int
+*"regions.xlsx"*. Необязательный, значение по умолчанию 0, тип int
 
 ```sh
 --range_right (string) 
 ```
 Правая граница для регионов помогает взять slice(подвыборку) регионов, числовые коды регионов находятся в файле
-*"regions.xlsx"* . Необзязательный, значение по умолчанию 86, тип int
+*"regions.xlsx"*. Необязательный, значение по умолчанию 86, тип int
 
 
 ```sh
 -t --token (string)
 ```
 
-Токен для гугл API. Необходимо получить з
+Токен для Google API. Необходимо получить [здесь](https://developers.google.com/maps/documentation/geocoding/start).
+
+
+
+```sh
+-s --save_place (string)
+```
+
+Место для сохранения результатов. Параметр может принимать оно из трёх значений "excel", "database" или "both". 
+Для атрибутов "database" и "both" требуется наличие конфигурационного файла для подключения к базе данных.
+Обязательный параметр. Тип str
+
+Столбцы в базе данных должны иметь аналогичные имена и типы:
+
+
+- ADDRESSES | VARCHAR(512)
+- TYPE_PP | VARCHAR(256)
+- LAT | DOUBLE
+- LON | DOUBLE
+- REGION | VARCHAR(256)
+- DATE_OF_LOADING | DATE
+- DATE_OF_LOADING_FIRST | DATE
+- COMPANY_NAME | VARCHAR(256)
+
 
 
 
 ## Examples 
 ```sh
-python main.py --browser="firefox" --query="Ozon, пункты выдачи"
+python main.py --browser="firefox" --query="Ozon, пункты выдачи" --token="aezakmiAEZAKMIaezakmi" --save_place="both"
 ```
+Для извлечения информации по всем регионам и сохранением в Excel и базу с использованием Firefox
+
+```sh
+python main.py --browser="chrome" --query="Ozon, пункты выдачи" --range_left=10 --range_right=15 --token="aezakmiAEZAKMIaezakmi" --save_place="excel"
+```
+
+Для  сохранения 
 
 ## License
 

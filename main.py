@@ -134,7 +134,7 @@ class YandexMapParser:
 
             # insert query in input in yandex map
 
-            wait = WebDriverWait(self.driver, 10)
+            wait = WebDriverWait(self.driver, 15)
             el = wait.until(ec.visibility_of_element_located((By.CLASS_NAME, "input__control")))
             el.send_keys(self.query)
             el.send_keys(Keys.ENTER)
@@ -142,7 +142,7 @@ class YandexMapParser:
             # if we have scroll on site(if we have enough number of observations
             try:
                 # get info about scroll
-                wait = WebDriverWait(self.driver, 10)
+                wait = WebDriverWait(self.driver, 15)
                 source = wait.until(ec.visibility_of_element_located(
                     (By.CLASS_NAME, "scroll__scrollbar-thumb")))
 
@@ -162,7 +162,7 @@ class YandexMapParser:
                     # drag slider down till the end. Calculate length
                     # of slider current position and calculating offset as
                     #  height(height of window) - slider height - slider position
-                    time.sleep(12)
+                    time.sleep(13)
 
                     slider = self.driver.find_elements_by_class_name('scroll__scrollbar-thumb')[0]
                     slider_size = slider.size
@@ -172,6 +172,8 @@ class YandexMapParser:
                     webdriver.ActionChains(self.driver).drag_and_drop_by_offset(source_ele, target_ele_x_offset,
                                                                                 height - slider_h - slider.location.get(
                                                                                     "y")).perform()
+
+                    time.sleep(4)
                     webdriver.ActionChains(self.driver).drag_and_drop_by_offset(source_ele, target_ele_x_offset,
                                                                                 1).perform()
 
@@ -244,7 +246,6 @@ class YandexMapParser:
 
 
 if __name__ == '__main__':
-
     my_parser = argparse.ArgumentParser()
     my_parser.add_argument("-b", '--browser', choices=['firefox', 'chrome'],
                            action='store', type=str, default='chrome', required=True)
@@ -253,7 +254,7 @@ if __name__ == '__main__':
     my_parser.add_argument('-r', '--range_right', action='store', type=int, default=84,  required=False)
     my_parser.add_argument('-t', '--token', action='store', type=str, required=True)
     my_parser.add_argument('-sp', '--save_place', choices=['excel', 'database', 'both'],
-                           action='store', type=str, required=True)
+                           action='store', type=str, required=True, default=['excel'])
 
     args = my_parser.parse_args()
 
@@ -265,7 +266,8 @@ if __name__ == '__main__':
 
     regions = pd.read_excel("regions.xlsx")['name'].values.tolist()
 
-    df_new = None
+    df_all = None
+
     curr_date = datetime.today().strftime('%Y-%m-%d')
 
     for region_id in tqdm(range(_slice[0], _slice[1])):
@@ -277,36 +279,40 @@ if __name__ == '__main__':
                                  token=args.token, _query=query,
                                  region=regions[region_id], _curr_date=curr_date, _browser=browser)
 
-        if df_new is None:
+        if df_all is None:
             df_new = parser.parse_data()
             df_new['DATE_OF_LOADING_FIRST'] = datetime.today().strftime('%Y-%m-%d')
+            df_all = df_new.copy()
         else:
-            df_new = df_new.append(parser.parse_data())
+            df_new = parser.parse_data()
             df_new['DATE_OF_LOADING_FIRST'] = datetime.today().strftime('%Y-%m-%d')
 
+            df_all = df_all.append(df_new)
+
         if args.save_place in ['excel', 'both']:
-            df_new.to_excel('./output/result_{0}.xlsx'.format(search_string), index=None)
+            df_new.to_excel('./output/result_{0}_{1}.xlsx'.format(search_string, regions[region_id]), index=None)
 
-    if args.save_place in ['database', 'both']:
-        db_conn = DbAction('config_db.json')
+            df_all.to_excel('./output/full_report_{0}.xlsx'.format(search_string), index=None)
 
-        # df_new = pd.read_excel("output/result_Ozon, пункты выдачи.xlsx").sample(20)
+        if args.save_place in ['database', 'both']:
+            db_conn = DbAction('config_db.json')
 
-        type_of_points = df_new['TYPE_PP'].values[0]
-        type_of_company_name = df_new['COMPANY_NAME'].values[0]
+            type_of_points = df_new['TYPE_PP'].values[0]
+            type_of_company_name = df_new['COMPANY_NAME'].values[0]
+            type_of_company_region = df_new['REGION'].values[0]
 
-        df = db_conn.select(
-            'SELECT * FROM  DATA_SCIENCE.PARSER_DELIVERY_POINTS WHERE TYPE_PP=\'{0}\' AND COMPANY_NAME=\'{1}\'' \
-            .format(type_of_points, type_of_company_name))
+            df = db_conn.select(
+                'SELECT * FROM  DATA_SCIENCE.PARSER_DELIVERY_POINTS WHERE TYPE_PP=\'{0}\' AND COMPANY_NAME=\'{1}\' AND REGION=\'{2}\'' \
+                .format(type_of_points, type_of_company_name, type_of_company_region))
 
-        if len(df) == 0:
-            df_insert = df_new
-        else:
-            df_insert = db_conn.merge_dataframe_diff(df, df_new)
-        # df_new = db_conn.select('SELECT * FROM  DATA_SCIENCE.PARSER_DELIVERY_POINTS')
-        db_conn.delete(
-            "DELETE from DATA_SCIENCE.PARSER_DELIVERY_POINTS WHERE TYPE_PP=\'{0}\' AND COMPANY_NAME=\'{1}\'".format(
-                type_of_points, type_of_company_name))
+            if len(df) == 0:
+                df_insert = df_new
+            else:
+                df_insert = db_conn.merge_dataframe_diff(df, df_new)
 
-        db_conn.insert(df_insert, "DATA_SCIENCE",
-                       "PARSER_DELIVERY_POINTS")
+            db_conn.delete(
+                "DELETE from DATA_SCIENCE.PARSER_DELIVERY_POINTS WHERE TYPE_PP=\'{0}\' AND COMPANY_NAME=\'{1}\' AND REGION=\'{2}\'  ".format(
+                    type_of_points, type_of_company_name, type_of_company_region))
+
+            db_conn.insert(df_insert, "DATA_SCIENCE",
+                           "PARSER_DELIVERY_POINTS")

@@ -132,20 +132,25 @@ class DbAction:
             print("error: ", ibm_db.conn_errormsg())
             exit(-1)
 
-
     def merge_dataframe_diff(self, target_df, source_df):
 
         target_df['DATE_OF_LOADING'] = target_df['DATE_OF_LOADING'].astype('datetime64[ns]')
         source_df['DATE_OF_LOADING'] = source_df['DATE_OF_LOADING'].astype('datetime64[ns]')
         full_df = target_df.append(source_df)
 
+        full_df['ADDRESS'] = full_df['ADDRESS'].str.replace(', Москва', '')
+        full_df['ADDRESS'] = full_df['ADDRESS'].str.replace('Москва', '')
+
+        full_df.loc[full_df['REGION'] == 'Москва', 'ADDRESS'] += ', Москва'
+
         full_df['DATE_OF_LOADING'] = full_df['DATE_OF_LOADING'].astype('datetime64[ns]')
         adr_date_dict = {i[0]: i[1] for i in target_df[['ADDRESS', 'DATE_OF_LOADING_FIRST']].values}
-        print(adr_date_dict)
+
         new_df = (full_df
                   .reset_index(drop=True)
                   .sort_values('DATE_OF_LOADING', ascending=False)
-                  .drop_duplicates(subset=['ADDRESS', 'TYPE_PP'], keep='first'))
+                  #.drop_duplicates(subset=['ADDRESS', 'TYPE_PP'], keep='first'))
+                  .drop_duplicates(subset=['COMPANY_NAME', 'LAT', 'LON'], keep='first'))
 
         curr_date = datetime.today().strftime('%Y-%m-%d')
 
