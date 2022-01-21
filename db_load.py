@@ -150,7 +150,7 @@ class DbAction:
                   .reset_index(drop=True)
                   .sort_values('DATE_OF_LOADING', ascending=False)
                   #.drop_duplicates(subset=['ADDRESS', 'TYPE_PP'], keep='first'))
-                  .drop_duplicates(subset=['COMPANY_NAME', 'LAT', 'LON'], keep='first'))
+                  .drop_duplicates(subset=['ADDRESS', 'TYPE_PP'], keep='first'))
 
         curr_date = datetime.today().strftime('%Y-%m-%d')
 
