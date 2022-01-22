@@ -166,23 +166,29 @@ class DbAction:
 
 if __name__ == '__main__':
     pass
-    # db_conn = DbAction('config_db.json')
-    #
-    # df_new = pd.read_excel("output/result_Ozon, пункты выдачи.xlsx").sample(20)
-    #
-    # type_of_points = df_new['TYPE_PP'].values[0]
-    # type_of_company_name = df_new['COMPANY_NAME'].values[0]
-    #
-    # df = db_conn.select('SELECT * FROM  DATA_SCIENCE.PARSER_DELIVERY_POINTS WHERE TYPE_PP=\'{0}\' AND COMPANY_NAME=\'{1}\''\
-    #                     .format(type_of_points, type_of_company_name))
-    #
-    # if len(df) == 0:
-    #     df_insert = df_new
-    # else:
-    #     df_insert = db_conn.merge_dataframe_diff(df, df_new)
-    # # df_new = db_conn.select('SELECT * FROM  DATA_SCIENCE.PARSER_DELIVERY_POINTS')
-    # db_conn.delete("DELETE from DATA_SCIENCE.PARSER_DELIVERY_POINTS WHERE TYPE_PP=\'{0}\' AND COMPANY_NAME=\'{1}\'".format(
-    #     type_of_points, type_of_company_name))
-    #
-    # db_conn.insert(df_insert, "DATA_SCIENCE",
-    #                "PARSER_DELIVERY_POINTS")
+    df_all = pd.read_excel("output/result_Ozon, пункты выдачи.xlsx")
+    db_conn = DbAction('config_db.json')
+    for region in df_all.REGION.unique():
+        if region in ['Санкт-Петербург']:
+            continue
+        df_new = df_all[df_all.REGION == region].drop_duplicates(subset=['ADDRESS'], keep='first')
+
+        type_of_points = df_new['TYPE_PP'].values[0]
+        type_of_company_name = df_new['COMPANY_NAME'].values[0]
+        type_of_company_region = df_new['REGION'].values[0]
+
+        df = db_conn.select(
+            'SELECT * FROM  DATA_SCIENCE.PARSER_DELIVERY_POINTS WHERE TYPE_PP=\'{0}\' AND COMPANY_NAME=\'{1}\' AND REGION=\'{2}\'' \
+                .format(type_of_points, type_of_company_name, type_of_company_region))
+
+        if len(df) == 0:
+            df_insert = df_new
+        else:
+            df_insert = db_conn.merge_dataframe_diff(df, df_new)
+
+        db_conn.delete(
+            "DELETE from DATA_SCIENCE.PARSER_DELIVERY_POINTS WHERE TYPE_PP=\'{0}\' AND COMPANY_NAME=\'{1}\' AND REGION=\'{2}\'  ".format(
+                type_of_points, type_of_company_name, type_of_company_region))
+
+        db_conn.insert(df_insert, "DATA_SCIENCE",
+                       "PARSER_DELIVERY_POINTS")

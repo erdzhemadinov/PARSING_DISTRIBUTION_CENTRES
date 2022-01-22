@@ -134,7 +134,7 @@ class YandexMapParser:
 
             # insert query in input in yandex map
 
-            wait = WebDriverWait(self.driver, 10)
+            wait = WebDriverWait(self.driver, 15)
             el = wait.until(ec.visibility_of_element_located((By.CLASS_NAME, "input__control")))
             el.send_keys(self.query)
             el.send_keys(Keys.ENTER)
@@ -142,7 +142,7 @@ class YandexMapParser:
             # if we have scroll on site(if we have enough number of observations
             try:
                 # get info about scroll
-                wait = WebDriverWait(self.driver, 10)
+                wait = WebDriverWait(self.driver, 15)
                 source = wait.until(ec.visibility_of_element_located(
                     (By.CLASS_NAME, "scroll__scrollbar-thumb")))
 
@@ -162,7 +162,7 @@ class YandexMapParser:
                     # drag slider down till the end. Calculate length
                     # of slider current position and calculating offset as
                     #  height(height of window) - slider height - slider position
-                    time.sleep(13)
+                    time.sleep(15)
 
                     slider = self.driver.find_elements_by_class_name('scroll__scrollbar-thumb')[0]
                     slider_size = slider.size
@@ -222,7 +222,7 @@ class YandexMapParser:
             # geocoding via google
             for j in tqdm(addresses):
 
-                sleep(0.2)
+                sleep(0.3)
                 lat, lon = self._get_google_results(j, False, True)
                 lat_list.append(lat)
                 lon_list.append(lon)
@@ -260,63 +260,76 @@ if __name__ == '__main__':
 
     link = "https://yandex.ru/maps/?ll=84.163264%2C61.996842&z=3"
 
+    # getting slice of regiond
     search_string = args.query
     _slice = (args.range_left, args.range_right)
     browser = args.browser
 
+    #getting regions
     regions = pd.read_excel("regions.xlsx")['name'].values.tolist()
 
     df_all = None
-
     curr_date = datetime.today().strftime('%Y-%m-%d')
 
-    for region_id in tqdm(range(_slice[0], _slice[1])):
-
+    attempts = 0
+    region_id = _slice[0]
+    # for every region
+    while region_id < _slice[1]:
+        print("Current_region {0}".format(region_id))
         query = search_string + " " + regions[region_id]
         parser = YandexMapParser(_link=link,
                                  sleep_time=0.1, change_header_iter=10,
                                  save_after=100, with_selenium=True,
                                  token=args.token, _query=query,
                                  region=regions[region_id], _curr_date=curr_date, _browser=browser)
-
-        if df_all is None:
+        # we're trying to parse
+        try:
+            region_id += 1
             df_new = parser.parse_data()
             df_new['DATE_OF_LOADING_FIRST'] = datetime.today().strftime('%Y-%m-%d')
+            attempts = 0
+            # if everything is ok then good
+        except Exception as e:
+            # if we failed  let's try again
+            attempts =+ 1
+            print("Somethin' went wrong during parsing. Attemption {0}".format(attempts))
+            print("Restart from current region")
+            region_id -= 1
+            continue
+        # collect batch
+        if df_all is None:
             df_all = df_new.copy()
         else:
-            df_new = parser.parse_data()
-            df_new['DATE_OF_LOADING_FIRST'] = datetime.today().strftime('%Y-%m-%d')
-
             df_all = df_all.append(df_new)
             df_new.to_excel('./output/result_{0}_{1}.xlsx'.format(search_string, regions[region_id]), index=None)
-
+        # save full data
         if args.save_place in ['excel', 'both']:
-
             df_all.to_excel('./output/full_report_{0}.xlsx'.format(search_string), index=None)
 
     if args.save_place in ['database', 'both']:
         db_conn = DbAction('config_db.json')
         for region in df_all.REGION.unique():
-
+            # write every region separately
             df_new = df_all[df_all.REGION == region].drop_duplicates(subset=['ADDRESS'], keep='first')
 
             type_of_points = df_new['TYPE_PP'].values[0]
             type_of_company_name = df_new['COMPANY_NAME'].values[0]
             type_of_company_region = df_new['REGION'].values[0]
 
+            # extract data from database
             df = db_conn.select(
                 'SELECT * FROM  DATA_SCIENCE.PARSER_DELIVERY_POINTS WHERE TYPE_PP=\'{0}\' AND COMPANY_NAME=\'{1}\' AND REGION=\'{2}\'' \
                 .format(type_of_points, type_of_company_name, type_of_company_region))
 
+            # merge them
             if len(df) == 0:
                 df_insert = df_new
             else:
                 df_insert = db_conn.merge_dataframe_diff(df, df_new)
-
-
+            # delete data from database
             db_conn.delete(
                 "DELETE from DATA_SCIENCE.PARSER_DELIVERY_POINTS WHERE TYPE_PP=\'{0}\' AND COMPANY_NAME=\'{1}\' AND REGION=\'{2}\'  ".format(
                     type_of_points, type_of_company_name, type_of_company_region))
-
+            # write data back
             db_conn.insert(df_insert, "DATA_SCIENCE",
                            "PARSER_DELIVERY_POINTS")
